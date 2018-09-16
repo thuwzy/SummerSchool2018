@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">肥宅快乐搜索器</li>
+{% endblock %}
+
+{% block content %}
+<!--
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Board</th>
+        <th>Posts</th>
+        <th>Topics</th>
+        <th>Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for board in boards %}
+        <tr>
+          <td>
+            <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
+            <small class="text-muted d-block">{{ board.description }}</small>
+          </td>
+          <td class="align-middle">0</td>
+          <td class="align-middle">0</td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>-->
+    <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_subject">Search</label>
+      <input type="text" class="form-control" id="id_subject" name="search">
+    </div>
+    <div class="form-group">
+      <label for="id_start">startTime</label>
+      <input type="text" class="form-control" id="id_start" name="startTime">
+    </div>
+    <div class="form-group">
+      <label for="id_end">endTime</label>
+      <input type="text" class="form-control" id="id_start" name="endTime">
+    </div>
+    <button type="submit" class="btn btn-success">快乐--</button>
+  </form>
+{% endblock %}

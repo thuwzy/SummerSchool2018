@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load highlight %}
+
+{% block title %}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">肥宅快乐搜索器</a></li>
+  <li class="breadcrumb-item active">index</li>
+{% endblock %}
+
+{% block content %}
+  
+  <a href="{% url 'home' %}">
+  <button type="button" class="btn btn-success">Next Page</button></a>
+
+  <div class="mb-4">
+  </div>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Title   (All={{num}})</th>
+        <th>Id</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for news in page %}
+
+        <tr>
+          <td>
+          <a href="{% url 'get_details' news.cnt %}">{{news.title}}</a>
+          <!--{% highlight news.contents with search html_tag "div" css_class "highlight_me_please" max_length 200 %}--> 
+          </td>
+          <td>{{ news.cnt }}</td>
+          <td>{{ news.date }}</td>
+        </tr>
+      {% endfor %}
+      {% for index in page.paginator.page_range %}
+
+        {% if index == page.number %}
+        <span><button type="button">{{index}}</button></a></span>
+        {% else %}
+        <a href="{% url 'index' index=index %}">
+            <button type="button" >{{index}}</button></a>
+        </a>
+        {% endif %}
+
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

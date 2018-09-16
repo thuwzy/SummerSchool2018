@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">肥宅快乐搜索器</a></li>
+  <li class="breadcrumb-item active">{{ news.title }}</li>
+{% endblock %}
+
+{% block content %}
+  <div class="mb-4">
+  </div>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>{{news.title}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ news.date }}</td>
+      </tr>
+      <tr>
+        <td>{{ news.contents }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+    <div class="mb-4">
+  </div>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>相关推荐</th>
+        <th>Id</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for news in recomments %}
+
+        <tr>
+          <td>
+          <a href="{% url 'get_details' news.cnt %}">{{news.title}}</a>
+          </td>
+          <td>{{ news.cnt }}</td>
+          <td>{{ news.date }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

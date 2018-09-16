@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/new/images">
+        <file>image/B1.png</file>
+        <file>image/B2.png</file>
+        <file>image/B3.png</file>
+        <file>image/B4.png</file>
+        <file>image/B5.png</file>
+        <file>image/B6.png</file>
+        <file>image/B7.png</file>
+        <file>image/background1.png</file>
+        <file>image/R1.png</file>
+        <file>image/R2.png</file>
+        <file>image/R3.png</file>
+        <file>image/R4.png</file>
+        <file>image/R5.png</file>
+        <file>image/R6.png</file>
+        <file>image/R7.png</file>
+        <file>image/background.png</file>
+    </qresource>
+    <qresource prefix="/new/sound">
+        <file>sound/directMove.mp3</file>
+        <file>sound/jumpMove.mp3</file>
+        <file>sound/start.mp3</file>
+        <file>sound/upgrade.mp3</file>
+        <file>sound/win.mp3</file>
+    </qresource>
+</RCC>
